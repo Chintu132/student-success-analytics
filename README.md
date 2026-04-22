@@ -1,29 +1,41 @@
 # Student Success Analytics
 
 ## Overview
-This project is a hands-on analytics project I am building to better understand student performance, retention, and engagement patterns. The goal is to use data to identify students who may be at risk and to create meaningful insights that can support better academic decisions.
+Student Success Analytics is a portfolio project focused on analyzing student retention, engagement, and academic risk using a practical higher education analytics use case. The project is designed to demonstrate how data engineering, analytics, and reporting can be applied to support student success initiatives and institutional decision-making.
 
-## Purpose
-I created this project to practice and demonstrate my skills in Python, SQL, and data analysis through a real-world education use case. It focuses on analyzing student-related data and turning it into useful insights through reporting and predictive analysis.
+## Project Goal
+The goal of this project is to build a clean and structured analytics solution that brings together data processing, SQL-based analysis, and reporting concepts in a way that reflects real-world education data workflows. It highlights how student-related data can be transformed into insights that help identify trends, measure outcomes, and support early intervention.
+
+## What This Project Demonstrates
+This project is intended to showcase:
+- end-to-end project organization in GitHub
+- Python-based data processing and analysis
+- SQL schema design and analytical querying
+- starter modeling for at-risk student identification
+- documentation of privacy and reporting considerations in an education setting
 
 ## Tech Stack
 - Python
 - SQL
 - Power BI
 
-## Key Features
-- Student retention analysis
-- Engagement scoring
-- At-risk student prediction
-- Basic reporting and dashboard support
+## Project Structure
+- `etl/` - extraction and data preparation scripts
+- `analysis/` - retention, engagement, and risk analysis scripts
+- `sql/schema/` - table design scripts
+- `sql/analytics/` - analytical and reporting queries
+- `docs/` - supporting documentation and privacy notes
 
-## What This Project Shows
-Through this project, I am working on:
-- cleaning and analyzing data
-- building simple data pipelines
-- writing SQL queries for reporting
-- creating insights that are easy to understand
-- applying analytics to a practical business problem
+## Current Scope
+The current version of the project includes:
+- retention analysis starter logic
+- engagement scoring starter logic
+- at-risk model starter structure
+- SQL schema and reporting query examples
+- FERPA and privacy considerations documentation
+
+## Use Case
+This project is built around a student success analytics scenario where academic and engagement data can be analyzed to better understand retention patterns, identify at-risk populations, and support data-informed planning.
 
 ## Status
-This project is currently in progress and being developed step by step.
+This project is actively being expanded with additional logic, sample data, and reporting outputs.
