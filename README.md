@@ -1,41 +1,153 @@
-# Student Success Analytics
+Student Success Analytics Platform
 
-## Overview
-Student Success Analytics is a portfolio project focused on analyzing student retention, engagement, and academic risk using a practical higher education analytics use case. The project is designed to demonstrate how data engineering, analytics, and reporting can be applied to support student success initiatives and institutional decision-making.
+End-to-End Data Engineering and Machine Learning Pipeline
 
-## Project Goal
-The goal of this project is to build a clean and structured analytics solution that brings together data processing, SQL-based analysis, and reporting concepts in a way that reflects real-world education data workflows. It highlights how student-related data can be transformed into insights that help identify trends, measure outcomes, and support early intervention.
+Project Overview
 
-## What This Project Demonstrates
-This project is intended to showcase:
-- end-to-end project organization in GitHub
-- Python-based data processing and analysis
-- SQL schema design and analytical querying
-- starter modeling for at-risk student identification
-- documentation of privacy and reporting considerations in an education setting
+This project builds an end-to-end analytics system to study student learning behavior, retention patterns, and academic risk.
 
-## Tech Stack
-- Python
-- SQL
-- Power BI
+It simulates how real educational platforms process large-scale learning data and convert it into actionable insights using data engineering, analytics, and machine learning.
 
-## Project Structure
-- `etl/` - extraction and data preparation scripts
-- `analysis/` - retention, engagement, and risk analysis scripts
-- `sql/schema/` - table design scripts
-- `sql/analytics/` - analytical and reporting queries
-- `docs/` - supporting documentation and privacy notes
+The system follows a complete pipeline:
 
-## Current Scope
-The current version of the project includes:
-- retention analysis starter logic
-- engagement scoring starter logic
-- at-risk model starter structure
-- SQL schema and reporting query examples
-- FERPA and privacy considerations documentation
+Raw Data → ETL Pipeline → Data Warehouse → Analytics Layer → Feature Engineering → Machine Learning Model → Business Insights
 
-## Use Case
-This project is built around a student success analytics scenario where academic and engagement data can be analyzed to better understand retention patterns, identify at-risk populations, and support data-informed planning.
+Problem Statement
 
-## Status
-This project is actively being expanded with additional logic, sample data, and reporting outputs.
+Educational institutions often struggle to:
+
+Identify students at risk of failing or dropping out
+Understand student engagement behavior over time
+Analyze cohort-level retention trends
+Convert raw LMS data into meaningful insights
+
+This project addresses these challenges by building a structured data pipeline and predictive model to support early intervention strategies.
+
+System Architecture
+
+The system is designed as a layered data pipeline:
+
+Data Generation Layer
+Synthetic dataset based on OULAD structure is created, including:
+Student enrollment data
+Assessment records
+LMS clickstream data
+ETL Pipeline
+Extracts raw data
+Transforms and cleans datasets
+Loads into a structured warehouse
+Data Warehouse
+A relational structure built using SQLite:
+fact_enrollment
+fact_weekly_engagement
+fact_retention
+dim_student
+Analytics Layer
+Cohort retention analysis
+Engagement scoring system
+Outcome distribution analysis
+Machine Learning Layer
+Logistic regression model
+Predicts at-risk students
+Evaluates model performance using standard metrics
+Key Features
+1. ETL Pipeline
+
+A complete data pipeline that generates and processes large-scale synthetic student data. It simulates real LMS behavior and structures it into analytical tables.
+
+2. Data Warehouse Design
+
+The project uses a star-schema style warehouse design to support analytics queries and ML feature extraction.
+
+Core tables include:
+
+fact_enrollment
+fact_weekly_engagement
+fact_retention
+dim_student
+3. Cohort Retention Analysis
+
+Students are grouped by enrollment cohort to analyze retention over time.
+
+This helps answer:
+
+How student retention changes across academic terms
+How dropout patterns vary by cohort
+How outcomes are distributed within each cohort
+4. Engagement Scoring System
+
+Each student is assigned an engagement score based on LMS activity and academic behavior.
+
+Students are classified into:
+
+ON-TRACK
+WATCH
+AT-RISK
+
+Key insight:
+
+AT-RISK students show significantly lower pass rates compared to ON-TRACK students.
+5. Machine Learning Model
+
+A logistic regression model is trained to predict at-risk students using engineered features from the engagement layer.
+
+The model includes:
+
+Train/test split
+Evaluation metrics (accuracy, precision, recall, ROC-AUC)
+Confusion matrix analysis
+Key Insights
+Engagement score is strongly correlated with academic outcomes
+AT-RISK students have a very low pass probability compared to ON-TRACK students
+Cohort behavior remains consistent across different academic terms
+Early behavioral signals are effective predictors of student performance
+Tech Stack
+Python
+Pandas, NumPy
+Scikit-learn
+SQLite (Data Warehouse)
+Matplotlib / Seaborn
+ETL pipeline design patterns
+Project Structure
+student-success-analytics/
+│
+├── etl/              Data extraction, transformation, loading
+├── analysis/         Cohort, engagement, and ML models
+├── sql/              Warehouse schema and queries
+├── dashboards/      Generated visualizations
+├── data/            Raw and processed datasets
+├── docs/            Documentation
+└── README.md
+How to Run
+
+Install dependencies:
+
+pip install -r requirements.txt
+
+Run the full pipeline:
+
+python etl/run_pipeline.py
+
+Run analytics modules:
+
+python analysis/retention_cohort.py
+python analysis/engagement_scoring.py
+python analysis/at_risk_model.py
+What This Project Demonstrates
+
+This project demonstrates practical experience in:
+
+Building end-to-end data pipelines
+Designing a data warehouse schema
+Performing cohort and behavioral analytics
+Engineering features for machine learning
+Building and evaluating predictive models
+Translating raw data into business insights
+Future Improvements
+Deploy model as an API using FastAPI
+Build interactive dashboard using Power BI or Streamlit
+Add real-time data streaming simulation
+Deploy pipeline on cloud infrastructure (AWS or Azure)
+Author
+
+This project was built to demonstrate end-to-end skills in data engineering, analytics, and machine learning for real-world educational data systems.

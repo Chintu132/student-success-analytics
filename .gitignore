@@ -1,7 +1,9 @@
+data/oulad/*.csv
+data/ipeds/*.csv
+data/synthetic/*.csv
+*.db
 __pycache__/
 *.pyc
-data/
-*.csv
-*.xlsx
+.ipynb_checkpoints/
 *.pbix
-.env
+.DS_Store
