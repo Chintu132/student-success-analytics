@@ -45,4 +45,15 @@ student-success-analytics/
 ├── dashboards/
 ├── data/
 ├── docs/
-└── README.md
+└── README.
+
+## Sample Results
+
+### Engagement Score vs Student Outcome
+![Engagement vs Outcome](dashboards/screenshots/engagement_vs_outcome.png)
+
+### At-Risk Model ROC Curve
+![ROC Curve](dashboards/screenshots/roc_curve.png)
+
+### Retention Trends
+![Retention Curves](dashboards/screenshots/retention_curves.png)
