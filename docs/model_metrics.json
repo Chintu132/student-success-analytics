@@ -1,0 +1,23 @@
+{
+  "auc_roc": 0.658,
+  "features": [
+    "gender_encoded",
+    "disability_encoded",
+    "age_encoded",
+    "education_encoded",
+    "prev_attempts",
+    "studied_credits",
+    "engagement_score"
+  ],
+  "coefficients": {
+    "gender_encoded": -0.001,
+    "disability_encoded": -0.018,
+    "age_encoded": 0.017,
+    "education_encoded": 0.002,
+    "prev_attempts": 0.015,
+    "studied_credits": -0.0,
+    "engagement_score": 0.111
+  },
+  "training_samples": 25600,
+  "test_samples": 6400
+}
