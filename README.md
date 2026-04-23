@@ -1,153 +1,48 @@
-Student Success Analytics Platform
+# Student Success Analytics Platform
 
-End-to-End Data Engineering and Machine Learning Pipeline
+## Overview
 
-Project Overview
+In this project, I built an end-to-end analytics platform to study student engagement, retention, and academic risk. I created a complete workflow that starts with raw student learning data and ends with analytics, machine learning, and business insights.
 
-This project builds an end-to-end analytics system to study student learning behavior, retention patterns, and academic risk.
+The project follows this flow:
 
-It simulates how real educational platforms process large-scale learning data and convert it into actionable insights using data engineering, analytics, and machine learning.
+**Raw Data → ETL Pipeline → Data Warehouse → Analytics → Feature Engineering → Machine Learning Model → Insights**
 
-The system follows a complete pipeline:
+## What I Built
 
-Raw Data → ETL Pipeline → Data Warehouse → Analytics Layer → Feature Engineering → Machine Learning Model → Business Insights
+I created synthetic student data based on the OULAD structure, including enrollment, assessments, registration, and LMS activity. I then built an ETL pipeline to extract, clean, transform, and load the data into a structured SQLite warehouse.
 
-Problem Statement
+I designed the warehouse using these main tables:
 
-Educational institutions often struggle to:
+- `dim_student`
+- `fact_enrollment`
+- `fact_weekly_engagement`
+- `fact_retention`
 
-Identify students at risk of failing or dropping out
-Understand student engagement behavior over time
-Analyze cohort-level retention trends
-Convert raw LMS data into meaningful insights
+On top of that, I built analysis modules for cohort retention, engagement scoring, and DFW analysis. I also built a logistic regression model to predict at-risk students using engineered features from the analytics layer.
 
-This project addresses these challenges by building a structured data pipeline and predictive model to support early intervention strategies.
+## Key Results
 
-System Architecture
+This project helped show that student engagement is strongly related to academic outcomes. Students in the **AT-RISK** group had much lower pass rates than students in the **ON-TRACK** group. The project also showed that early student behavior can be used to identify risk patterns and support early intervention.
 
-The system is designed as a layered data pipeline:
+## Tech Stack
 
-Data Generation Layer
-Synthetic dataset based on OULAD structure is created, including:
-Student enrollment data
-Assessment records
-LMS clickstream data
-ETL Pipeline
-Extracts raw data
-Transforms and cleans datasets
-Loads into a structured warehouse
-Data Warehouse
-A relational structure built using SQLite:
-fact_enrollment
-fact_weekly_engagement
-fact_retention
-dim_student
-Analytics Layer
-Cohort retention analysis
-Engagement scoring system
-Outcome distribution analysis
-Machine Learning Layer
-Logistic regression model
-Predicts at-risk students
-Evaluates model performance using standard metrics
-Key Features
-1. ETL Pipeline
+- Python
+- Pandas
+- NumPy
+- Scikit-learn
+- SQLite
+- Matplotlib
+- Seaborn
 
-A complete data pipeline that generates and processes large-scale synthetic student data. It simulates real LMS behavior and structures it into analytical tables.
+## Project Structure
 
-2. Data Warehouse Design
-
-The project uses a star-schema style warehouse design to support analytics queries and ML feature extraction.
-
-Core tables include:
-
-fact_enrollment
-fact_weekly_engagement
-fact_retention
-dim_student
-3. Cohort Retention Analysis
-
-Students are grouped by enrollment cohort to analyze retention over time.
-
-This helps answer:
-
-How student retention changes across academic terms
-How dropout patterns vary by cohort
-How outcomes are distributed within each cohort
-4. Engagement Scoring System
-
-Each student is assigned an engagement score based on LMS activity and academic behavior.
-
-Students are classified into:
-
-ON-TRACK
-WATCH
-AT-RISK
-
-Key insight:
-
-AT-RISK students show significantly lower pass rates compared to ON-TRACK students.
-5. Machine Learning Model
-
-A logistic regression model is trained to predict at-risk students using engineered features from the engagement layer.
-
-The model includes:
-
-Train/test split
-Evaluation metrics (accuracy, precision, recall, ROC-AUC)
-Confusion matrix analysis
-Key Insights
-Engagement score is strongly correlated with academic outcomes
-AT-RISK students have a very low pass probability compared to ON-TRACK students
-Cohort behavior remains consistent across different academic terms
-Early behavioral signals are effective predictors of student performance
-Tech Stack
-Python
-Pandas, NumPy
-Scikit-learn
-SQLite (Data Warehouse)
-Matplotlib / Seaborn
-ETL pipeline design patterns
-Project Structure
+```text
 student-success-analytics/
-│
-├── etl/              Data extraction, transformation, loading
-├── analysis/         Cohort, engagement, and ML models
-├── sql/              Warehouse schema and queries
-├── dashboards/      Generated visualizations
-├── data/            Raw and processed datasets
-├── docs/            Documentation
+├── etl/
+├── analysis/
+├── sql/
+├── dashboards/
+├── data/
+├── docs/
 └── README.md
-How to Run
-
-Install dependencies:
-
-pip install -r requirements.txt
-
-Run the full pipeline:
-
-python etl/run_pipeline.py
-
-Run analytics modules:
-
-python analysis/retention_cohort.py
-python analysis/engagement_scoring.py
-python analysis/at_risk_model.py
-What This Project Demonstrates
-
-This project demonstrates practical experience in:
-
-Building end-to-end data pipelines
-Designing a data warehouse schema
-Performing cohort and behavioral analytics
-Engineering features for machine learning
-Building and evaluating predictive models
-Translating raw data into business insights
-Future Improvements
-Deploy model as an API using FastAPI
-Build interactive dashboard using Power BI or Streamlit
-Add real-time data streaming simulation
-Deploy pipeline on cloud infrastructure (AWS or Azure)
-Author
-
-This project was built to demonstrate end-to-end skills in data engineering, analytics, and machine learning for real-world educational data systems.
