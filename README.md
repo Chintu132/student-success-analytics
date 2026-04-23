@@ -35,17 +35,7 @@ This project helped show that student engagement is strongly related to academic
 - Matplotlib
 - Seaborn
 
-## Project Structure
 
-```text
-student-success-analytics/
-├── etl/
-├── analysis/
-├── sql/
-├── dashboards/
-├── data/
-├── docs/
-└── README.
 
 ## Sample Results
 
@@ -57,3 +47,19 @@ student-success-analytics/
 
 ### Retention Trends
 ![Retention Curves](dashboards/screenshots/retention_curves.png)
+
+
+## Project Structure
+
+```text
+student-success-analytics/
+├── etl/
+├── analysis/
+├── sql/
+├── dashboards/
+├── data/
+├── docs/
+└── README
+
+
+
